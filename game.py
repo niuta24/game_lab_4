@@ -56,10 +56,10 @@ class Enemy(Character):
     """
     A character in the game.
     """
+    defeated = 0 
     def __init__(self, char_name, char_description):
         super().__init__(char_name, char_description)
         self.weakness = None
-        self.defeated = 0
     def set_conversation(self, conversation):
         """Set what the character will say when talked to."""
         self.conversation = conversation
@@ -86,7 +86,8 @@ class Enemy(Character):
             return False
     def get_defeated(self):
         """Return the defeated status of the character."""
-        return self.defeated
+        Enemy.defeated += 1
+        return Enemy.defeated
 class Item:
     """A game item."""
     def __init__(self, item_name):
