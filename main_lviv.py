@@ -87,10 +87,14 @@ while dead == False:
             # Fight with the inhabitant, if there is one
             print("Що ти візьмеш з собою в бій?")
             fight_with = input()
+            if backpack == []:
+                print("Мені шкода, але ти програв, бо твій рюкзак пустий.")
+                print("Кінець гри!")
+                dead = True
+                quit()
 
             # Do I have this item?
             if fight_with in backpack:
-
                 if inhabitant.fight(fight_with) == True:
                     # What happens if you win?
                     defeated += 1 
