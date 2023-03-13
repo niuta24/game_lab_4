@@ -1,1 +1,1 @@
-# game_lab_4
+# Standart Game
